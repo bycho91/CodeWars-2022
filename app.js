@@ -1,8 +1,9 @@
-function spinWords(str) {
-  let newWords = str.split(" ").map((word) => {
-    return word.length >= 5 ? word.split("").reverse().join("") : word;
-  });
+function removeVowels(str) {
+  let vowels = /a|e|i|o|u/gi;
+
+  let newWords = str.split(" ").map((word) => word.replace(vowels, ""));
+
   return newWords.join(" ");
 }
 
-console.log(spinWords("this is cool"));
+console.log(removeVowels("I am a troll trying to ruin your life!"));
