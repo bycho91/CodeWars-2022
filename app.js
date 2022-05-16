@@ -1,14 +1,8 @@
-function x() {
-  for (var i = 0; i <= 5; i++) {
-    function closure(num) {
-      setTimeout(() => {
-        console.log(num);
-      }, num * 1000);
-    }
-    closure(i);
-  }
-
-  console.log("this will run first");
+function spinWords(str) {
+  let newWords = str.split(" ").map((word) => {
+    return word.length >= 5 ? word.split("").reverse().join("") : word;
+  });
+  return newWords.join(" ");
 }
 
-x();
+console.log(spinWords("this is cool"));
