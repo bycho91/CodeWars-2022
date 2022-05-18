@@ -1,16 +1,16 @@
 var twoSum = function (nums, target) {
+  let hash = {};
+
   for (let i = 0; i <= nums.length - 1; i++) {
     let x = target - nums[i];
-    for (let j = i + 1; j <= nums.length - 1; j++) {
-      if (x === nums[j]) {
-        return [i, j];
-      }
+    if (hash.hasOwnProperty(x)) {
+      return [hash[x], i];
     }
+    hash[nums[i]] = i;
   }
-
-  return "no values";
+  return "No values";
 };
 
-const testArr = [1, 4, 2, 8];
+const testArr = [1, 3, 2, 8, 4, 10, 33, 12];
 
-console.log(twoSum(testArr, 100));
+console.log(twoSum(testArr, 13));
