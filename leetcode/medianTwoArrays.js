@@ -18,5 +18,3 @@ function findMedianSortedArrays(nums1, nums2) {
   halfway = Math.floor(merged.length / 2);
   return merged[halfway];
 }
-
-console.log(findMedianSortedArrays([1, 2], [5, 6]));
